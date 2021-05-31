@@ -2,7 +2,7 @@
 
 ## Table of Contents
 - [General info](#general)
-- [Technologies and Libraries](#Needed_libraries)
+- [Needed Libraries](#Needed_libraries)
 - [Setup](#setup)
 - [Commands](#Some_Useful_Docker_Commands)
 

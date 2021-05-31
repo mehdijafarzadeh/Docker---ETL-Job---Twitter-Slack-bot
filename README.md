@@ -4,7 +4,7 @@
 - [General info](#general)
 - [Technologies and Libraries](#Needed_libraries)
 - [Setup](#setup)
-- [Commands](#Some Useful Docker Commands)
+- [Commands](#Some_Useful_Docker_Commands)
 
 ### General
 In this very simple Project, I've started to build a docker-compose to collect twitts from twitter API and transform it into wished Information to post an Slack.
@@ -30,12 +30,11 @@ Followings applied:
 ### Setup
 To start with Twitt Collector you need Twitter Developer Account to get `API KEY`, `API SECRET` and `access token`, `access token secret`.  
 You can make a new account on twitter dev-acc [here](https://developer.twitter.com/en/apply).  
-After you get key and secret, you are ready to create Docker-Compose using Docker commands:
-- For running these commands you need to `cd` into the folder that contains the `docker-compose.yml` file.
+
 * note: Do not forget to put your Credential into .env file and aslo do not forget to put .env in the list of .gitignore
 
 
-# Some Useful Docker Commands 
+### Some Useful Docker Commands 
 
 For running these commands you need to `cd` into the folder that contains the `docker-compose.yml` file.
 

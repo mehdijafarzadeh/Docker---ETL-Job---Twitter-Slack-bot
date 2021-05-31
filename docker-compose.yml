@@ -1,0 +1,43 @@
+version: "3"
+# service -> container
+services:
+    # service name
+    
+    mypg:
+        image: postgres
+        ports:
+            # hostport:guestport
+            - 5555:5432
+        # setting environment variables
+        environment:
+            - POSTGRES_USER=postgres
+            - POSTGRES_PASSWORD=1234
+
+    tweet_collector:
+        build: tweet_collector
+        volumes:
+            - ./tweet_collector/src:/app/
+            - ./logs:/log/
+        env_file:
+            - .env
+        depends_on: 
+            - mypg
+         
+    metabase-app:
+        image: metabase/metabase
+        restart: always
+        ports:
+        # hostport:guestport
+            - 3001:3000
+        
+        depends_on: 
+            - mypg
+
+    slack_bot:
+        build: slack_bot
+        volumes:
+            - ./slack_bot/src:/app/
+        env_file:
+            - .env
+        depends_on: 
+            - tweet_collector
